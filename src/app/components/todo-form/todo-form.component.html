@@ -1,0 +1,19 @@
+<div class="todo-form" [formGroup]="todoForm">
+    <div class="todo-form__input-container">
+        <label class="todo-form__label">
+            <span>Description</span>
+            <input type="text" formControlName="todo">
+        </label>
+        <label class="todo-form__label">
+            <span>Completed</span>
+            <input type="checkbox" formControlName="finished">
+        </label>
+        <label class="todo-form__label">
+            <span>Priority</span>
+            <input type="checkbox" formControlName="priority">
+        </label>
+    </div>
+    <div class="todo-form__button-container">
+        <button (click)="onSubmit()">Submit</button>
+    </div>
+</div>

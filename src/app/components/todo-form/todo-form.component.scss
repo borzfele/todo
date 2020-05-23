@@ -1,0 +1,25 @@
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 16px;
+        min-height: 16px;
+    }
+
+    &__label:first-child {
+        flex-direction: column;
+    }
+
+    input {
+        margin-top: 10px;
+    }
+}
