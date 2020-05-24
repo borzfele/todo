@@ -1,19 +1,13 @@
 <div class="todo-form" [formGroup]="todoForm">
     <div class="todo-form__input-container">
-        <label class="todo-form__label">
-            <span>Description</span>
-            <input type="text" formControlName="todo">
-        </label>
-        <label class="todo-form__label">
-            <span>Completed</span>
-            <input type="checkbox" formControlName="finished">
-        </label>
-        <label class="todo-form__label">
-            <span>Priority</span>
-            <input type="checkbox" formControlName="priority">
-        </label>
+      <mat-form-field class="todo-form__input">
+        <mat-label>Todo</mat-label>
+        <input formControlName="todo" matInput>
+      </mat-form-field>
+      <mat-checkbox class="todo-form__input" labelPosition="after"  formControlName="finished">Completed</mat-checkbox>
+      <mat-checkbox class="todo-form__input" labelPosition="after" formControlName="priority">Priority</mat-checkbox>
     </div>
     <div class="todo-form__button-container">
-        <button (click)="onSubmit()">Submit</button>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
     </div>
 </div>

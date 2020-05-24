@@ -1,11 +1,25 @@
+:host {
+  border-radius: 3px;
+  background-color: white;
+  margin-right: 16px;
+  height: 240px;
+}
+
 .todo-form {
     display: flex;
     flex-direction: column;
-    width: 240px;
+    justify-content: space-evenly;
+    padding: 16px;
 
     &__input-container {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    &__input {
+      margin-bottom: 16px;
     }
 
     &__label {
@@ -13,10 +27,7 @@
         flex-direction: row;
         padding-bottom: 16px;
         min-height: 16px;
-    }
-
-    &__label:first-child {
-        flex-direction: column;
+        width: 100%;
     }
 
     input {

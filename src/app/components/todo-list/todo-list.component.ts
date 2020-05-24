@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from 'src/app/models/todo.models';
+import { Store } from '@ngxs/store';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  todos: Todo[];
+
+  columnsToDisplay = ["todo"];
+
+  constructor(private store: Store, public modal: MatDialog) { }
+
+  onDelete(todoId: number): void {
+    this.modal.open(ModalComponent, {data: todoId});
+  }
 
   ngOnInit() {
+    console.log(this.todos);
   }
 
 }

@@ -1,0 +1,15 @@
+:host {
+  border-radius: 3px;
+}
+
+td.mat-cell:last-of-type {
+  padding: 0;
+}
+
+.todo-list {
+  width: 100%;
+}
+
+.finished {
+  background-color: lightgreen;
+}

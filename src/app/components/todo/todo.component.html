@@ -1,0 +1,15 @@
+<div>
+  <p>{{todo.todo}}</p>
+</div>
+<div>
+  <mat-checkbox [checked]="todo.finished" labelPosition="before" (change)="onFinish($event)">Finished</mat-checkbox>
+</div>
+<div>
+  <mat-checkbox [checked]="todo.priority" labelPosition="before">Priority</mat-checkbox>
+</div>
+<div>
+  <button mat-button color="primary">Edit</button>
+</div>
+<div>
+  <button mat-button color="warn" (click)="onDelete(todo.id)">Delete</button>
+</div>
