@@ -34,3 +34,12 @@
         margin-top: 10px;
     }
 }
+
+@media screen and (max-width: 600px) {
+  :host {
+      border-radius: 3px;
+      background-color: white;
+      margin-right: 0;
+      height: 240px;
+  }
+}

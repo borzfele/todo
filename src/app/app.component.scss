@@ -15,4 +15,23 @@ div {
 
 .table-container {
   width: 80%;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 600px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 24px;
+  }
+
+  .priorities-table {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .table-container {
+    width: 100%;
+  }
 }

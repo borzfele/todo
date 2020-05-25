@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +28,12 @@ import { TodoComponent } from './components/todo/todo.component';
     TodoFormComponent,
     TodoListComponent,
     ModalComponent,
-    TodoComponent
+    TodoComponent,
+    EditModalComponent
   ],
   entryComponents: [
-    ModalComponent
+    ModalComponent,
+    EditModalComponent
   ],
   imports: [
     BrowserModule,

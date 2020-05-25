@@ -43,6 +43,26 @@ export class FinishTodo {
   constructor(public todoId: number) {}
 }
 
+export class UnfinishTodo {
+  static readonly type = '[TodoComponent] UnfinishTodo';
+
+  constructor(public todo: Todo) {}
+}
+
 export class FinishTodoSuccess {
   static readonly type = '[Store] FinishTodoSuccess';
+}
+
+export class UnfinishTodoSuccess {
+  static readonly type = '[Store] UnfinishTodoSuccess';
+}
+
+export class UpdateTodo {
+  static readonly type = '[EditModal] UpdateTodo';
+
+  constructor(public todo: Todo) {}
+}
+
+export class UpdateTodoSuccess {
+  static readonly type = '[Store] UpdateTodoSuccess';
 }

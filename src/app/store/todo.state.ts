@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { TodoStateModel, Todo } from '../models/todo.models';
-import { SubmitTodo, TodoListOnInit, GetTodosSuccess, GetTodos, DeleteTodo, SubmitTodoSuccess, DeleteTodoSuccess, FinishTodo, FinishTodoSuccess } from './todo.actions';
+import { SubmitTodo, TodoListOnInit, GetTodosSuccess, GetTodos, DeleteTodo, SubmitTodoSuccess, DeleteTodoSuccess, FinishTodo, FinishTodoSuccess, UnfinishTodo, UnfinishTodoSuccess, UpdateTodo, UpdateTodoSuccess } from './todo.actions';
 import { TodoService } from '../services/todo.service';
 
 @State<TodoStateModel>({
@@ -48,7 +48,7 @@ export class TodoState {
     });
   }
 
-  @Action([SubmitTodoSuccess, DeleteTodoSuccess, FinishTodoSuccess])
+  @Action([SubmitTodoSuccess, DeleteTodoSuccess, FinishTodoSuccess, UnfinishTodoSuccess, UpdateTodoSuccess])
   modificationSuccess(ctx: StateContext<TodoStateModel>): void {
     ctx.dispatch(new GetTodos());
   }
@@ -65,6 +65,20 @@ export class TodoState {
     this.todoService.finishTodo(action.todoId).subscribe(() => {
       ctx.dispatch(new FinishTodoSuccess());
     });
+  }
+
+  @Action(UnfinishTodo)
+  unfinishTodo(ctx: StateContext<TodoStateModel>, action: UnfinishTodo): void {
+    this.todoService.updateTodo(action.todo).subscribe(() => {
+      ctx.dispatch(new UnfinishTodoSuccess());
+    })
+  }
+
+  @Action(UpdateTodo)
+  updateTodo(ctx: StateContext<TodoStateModel>, action: UpdateTodo): void {
+    this.todoService.updateTodo(action.todo).subscribe(() => {
+      ctx.dispatch(new UpdateTodoSuccess());
+    })
   }
 
   constructor (private todoService: TodoService) {}

@@ -24,5 +24,9 @@ export class TodoService {
     return this.http.put('https://milankiszely-todo-test-api.herokuapp.com/todo/finish/' + todoId, {});
   }
 
+  updateTodo(todo: Todo): Observable<any> {
+    return this.http.put('https://milankiszely-todo-test-api.herokuapp.com/todo/' + todo.id, todo);
+  }
+
   constructor(private http: HttpClient) { }
 }
