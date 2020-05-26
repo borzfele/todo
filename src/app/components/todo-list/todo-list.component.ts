@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from 'src/app/models/todo.models';
 import { Store } from '@ngxs/store';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../delete-modal/delete-modal.component';
 import { EditModalComponent } from '../edit-modal/edit-modal.component';
 import { FinishTodo, UnfinishTodo } from 'src/app/store/todo.actions';
 

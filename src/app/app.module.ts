@@ -19,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModalComponent } from './components/modal/modal.component';
+import { ModalComponent } from './components/delete-modal/delete-modal.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';

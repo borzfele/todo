@@ -1,8 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Store } from '@ngxs/store';
-import { Todo } from '../../models/todo.models';
 import { FormGroup, FormControl } from '@angular/forms';
+
+import { Store } from '@ngxs/store';
+
+import { Todo } from '../../models/todo.models';
 import { UpdateTodo } from '../../store/todo.actions';
 
 @Component({
@@ -10,7 +12,7 @@ import { UpdateTodo } from '../../store/todo.actions';
   templateUrl: './edit-modal.component.html',
   styleUrls: ['./edit-modal.component.scss']
 })
-export class EditModalComponent implements OnInit {
+export class EditModalComponent {
 
   editTodoForm: FormGroup = new FormGroup({
     todo: new FormControl(this.todo.todo),
@@ -18,7 +20,11 @@ export class EditModalComponent implements OnInit {
     priority: new FormControl(this.todo.priority)
   });
 
-  constructor(public dialogRef: MatDialogRef<EditModalComponent>, @Inject(MAT_DIALOG_DATA) public todo: Todo, private store: Store) { }
+  constructor(
+    public dialogRef: MatDialogRef<EditModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public todo: Todo,
+    private store: Store
+    ) { }
 
   onSubmit(): void {
     this.todo.todo = this.editTodoForm.controls['todo'].value;
@@ -30,9 +36,6 @@ export class EditModalComponent implements OnInit {
 
   onCancel(): void {
     this.dialogRef.close();
-  }
-
-  ngOnInit() {
   }
 
 }
