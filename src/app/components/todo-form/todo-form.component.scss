@@ -1,8 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+h2 {
+  margin: 0 24px 24px 0;
+  width: 33%;
+  color: white;
+}
+
 .todo-form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    background-color: white;
     padding: 16px;
+    width: 33%;
+    border-radius: 5px;
 
     &__input-container {
       display: flex;

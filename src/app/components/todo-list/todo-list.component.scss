@@ -8,6 +8,16 @@ td.mat-cell:last-of-type {
 
 .todo-list {
   width: 100%;
+
+  &__empty-state {
+    color: darkcyan;
+    background-color: white;
+    padding: 24px;
+  }
+
+  &__todo-column {
+    width: 70%;
+  }
 }
 
 .finished {

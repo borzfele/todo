@@ -1,1 +1,3 @@
-<p>nav-bar works!</p>
+<nav>
+  <div *ngFor="let item of menuItems;" (click)="item.action()">{{item.label}}</div>
+</nav>

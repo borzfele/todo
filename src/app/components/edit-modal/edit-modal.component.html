@@ -1,16 +1,14 @@
-<div class="todo-form" [formGroup]="editTodoForm">
-  <div class="todo-form__input-container">
-    <mat-form-field class="todo-form__input">
+<div class="edit-form" [formGroup]="editTodoForm">
+  <div class="edit-form__input-container">
+    <mat-form-field class="edit-form__input">
       <mat-label>Todo</mat-label>
       <input formControlName="todo" matInput>
     </mat-form-field>
-    <mat-checkbox class="todo-form__input" labelPosition="after"  formControlName="finished">Finished</mat-checkbox>
-    <mat-checkbox class="todo-form__input" labelPosition="after" formControlName="priority">Priority</mat-checkbox>
+    <mat-checkbox class="edit-form__input" labelPosition="after"  formControlName="finished">Finished</mat-checkbox>
+    <mat-checkbox class="edit-form__input" labelPosition="after" formControlName="priority">Priority</mat-checkbox>
   </div>
-  <div class="todo-form__button-container">
+  <div class="edit-form__button-container">
       <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
-  </div>
-  <div class="todo-form__button-container">
       <button mat-raised-button (click)="onCancel()">Cancel</button>
   </div>
 </div>

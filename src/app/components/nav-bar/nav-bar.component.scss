@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+div {
+  border-left: 1px cadetblue solid;
+  margin: 16px 16px 16px 0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  color: darkcyan;
+  cursor: pointer;
+}
+
+div:first-child {
+  margin-left: 16px;
+}
+
+div:hover {
+  background-color: lightgray;
+}
+
+
+
+ul {
+  list-style: none;
+}

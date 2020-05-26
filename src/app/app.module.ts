@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxsModule } from '@ngxs/store';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,9 +20,9 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
-import { TodoComponent } from './components/todo/todo.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     TodoFormComponent,
     TodoListComponent,
     ModalComponent,
-    TodoComponent,
     EditModalComponent,
-    NavBarComponent
+    NavBarComponent,
+    TodoListPageComponent
   ],
   entryComponents: [
     ModalComponent,
@@ -44,6 +45,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ReactiveFormsModule,
     NgxsModule.forRoot([TodoState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsRouterPluginModule.forRoot(),
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatSliderModule,

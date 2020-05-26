@@ -1,12 +1,33 @@
-<table class="todo-list" mat-table [dataSource]="todos">
-
+<table class="todo-list" mat-table [dataSource]="todos" matSort
+*ngIf="todos.length != 0; else emptyState">
   <ng-container matColumnDef="todo">
-    <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let todo">
-      <app-todo [ngClass]="{'finished': todo.finished === true}" [todo]="todo"></app-todo>
+    <th mat-header-cell class="todo-list__todo-column" *matHeaderCellDef mat-sort-header>Todo</th>
+    <td mat-cell class="todo-list__todo-cell" *matCellDef="let todo">
+      <span>{{todo.todo}}</span>
     </td>
   </ng-container>
-
-  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
-
+  <ng-container matColumnDef="finished">
+    <th mat-header-cell *matHeaderCellDef>Finished</th>
+    <td mat-cell *matCellDef="let todo">
+      <mat-checkbox [checked]="todo.finished" (change)="onFinishClicked($event, todo)"></mat-checkbox>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Edit">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let todo">
+      <button mat-button color="primary" (click)="onEdit(todo)">Edit</button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Delete">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let todo">
+      <button mat-button color="warn" (click)="onDelete(todo.id)">Delete</button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr [ngClass]="{finished: myRowData.finished}" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
+
+<ng-template class="todo-list" #emptyState>
+  <h3 class="todo-list__empty-state">There are no todos.</h3>
+</ng-template>

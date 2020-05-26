@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   commonTodos$: Observable<Todo[]>;
 
   ngOnInit(): void {
-    this.store.dispatch(new TodoListOnInit());
   }
 
   constructor(private store: Store) {

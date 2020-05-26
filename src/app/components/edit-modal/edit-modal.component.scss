@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+h2 {
+  margin: 0 24px 24px 0;
+  color: white;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: lightgray;
+    border-radius: 5px;
+
+    &__input-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    &__button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    &__input {
+      margin-bottom: 16px;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 16px;
+        min-height: 16px;
+        width: 100%;
+    }
+
+    input {
+        margin-top: 10px;
+    }
+}

@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { AppComponent } from './app.component';
+import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
 
 
 const routes: Routes = [
-  { path: '', component: TodoFormComponent},
-  { path: 'todo/:todoId', component: TodoFormComponent}
+  { path: '', redirectTo: 'todo-list', pathMatch: 'full' },
+  { path: 'add-todo', component: TodoFormComponent },
+  { path: 'todo-list', component: TodoListPageComponent }
 ];
 
 @NgModule({
