@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { State, Action, StateContext, Selector } from '@ngxs/store';
+import {
+  State,
+  Action,
+  StateContext,
+  Selector } from '@ngxs/store';
 
 import { TodoStateModel, Todo } from '../models/todo.models';
 import { TodoService } from '../services/todo.service';
@@ -17,7 +21,8 @@ import {
   UnfinishTodo,
   UnfinishTodoSuccess,
   UpdateTodo,
-  UpdateTodoSuccess } from './todo.actions';
+  UpdateTodoSuccess
+} from './todo.actions';
 
 @State<TodoStateModel>({
   name: 'todo',
@@ -30,12 +35,14 @@ export class TodoState {
 
   @Selector()
   static commonTodos(state: TodoStateModel): Todo[] {
-    return state.todos.filter(todo => todo.priority === false);
+    return state.todos
+        .filter(todo => todo.priority === false);
   }
 
   @Selector()
   static priorityTodos(state: TodoStateModel): Todo[] {
-    return state.todos.filter(todo => todo.priority === true);
+    return state.todos
+        .filter(todo => todo.priority === true);
   }
 
   @Action([TodoListOnInit, GetTodos])

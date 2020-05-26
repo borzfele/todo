@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { Store } from '@ngxs/store';
@@ -16,7 +16,35 @@ import { FinishTodo, UnfinishTodo } from '../../store/todo.actions';
 export class TodoListComponent {
 
   @Input()
-  todos: Todo[];
+  set todos(todos: Todo[]) {
+    if(todos) {
+      const unfinished = todos
+          .filter(todo => todo.finished === false)
+          .sort((a, b) => {
+            if ( a.todo.toLowerCase() < b.todo.toLowerCase() ){
+              return -1;
+            }
+            if ( a.todo.toLowerCase() > b.todo.toLowerCase() ){
+              return 1;
+            }
+            return 0;
+          });
+      const finished = todos
+        .filter(todo => todo.finished === true)
+        .sort((a, b) => {
+          if ( a.todo < b.todo ){
+            return -1;
+          }
+          if ( a.todo > b.todo ){
+            return 1;
+          }
+          return 0;
+        });
+        this.localTodos = [...unfinished, ...finished];
+    }
+  }
+
+  localTodos: Todo[];
 
   columnsToDisplay = ["todo", "finished", "Edit", "Delete"];
 

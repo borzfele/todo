@@ -1,7 +1,10 @@
-<table class="todo-list" mat-table [dataSource]="todos" matSort
-*ngIf="todos.length != 0; else emptyState">
+<table
+mat-table
+class="todo-list"
+[dataSource]="localTodos"
+*ngIf="localTodos.length != 0; else emptyState">
   <ng-container matColumnDef="todo">
-    <th mat-header-cell class="todo-list__todo-column" *matHeaderCellDef mat-sort-header>Todo</th>
+    <th mat-header-cell class="todo-list__todo-column" *matHeaderCellDef>Todo</th>
     <td mat-cell class="todo-list__todo-cell" *matCellDef="let todo">
       <span>{{todo.todo}}</span>
     </td>
