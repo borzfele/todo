@@ -13,6 +13,18 @@ div {
   margin-bottom: 16px;
 }
 
+.table-title {
+  color: white;
+  margin-top: 0;
+}
+
+.form-container {
+  border-radius: 3px;
+  background-color: white;
+  margin-right: 16px;
+  height: 240px;
+}
+
 .table-container {
   width: 80%;
   border-radius: 3px;
@@ -24,6 +36,10 @@ div {
     flex-direction: column;
     justify-content: space-around;
     margin: 24px;
+  }
+
+  .form-container {
+    margin-right: 0;
   }
 
   .priorities-table {

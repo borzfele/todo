@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     TodoListComponent,
     ModalComponent,
     TodoComponent,
-    EditModalComponent
+    EditModalComponent,
+    NavBarComponent
   ],
   entryComponents: [
     ModalComponent,

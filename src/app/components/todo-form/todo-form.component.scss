@@ -1,10 +1,3 @@
-:host {
-  border-radius: 3px;
-  background-color: white;
-  margin-right: 16px;
-  height: 240px;
-}
-
 .todo-form {
     display: flex;
     flex-direction: column;
@@ -33,13 +26,4 @@
     input {
         margin-top: 10px;
     }
-}
-
-@media screen and (max-width: 600px) {
-  :host {
-      border-radius: 3px;
-      background-color: white;
-      margin-right: 0;
-      height: 240px;
-  }
 }
