@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { AppComponent } from './app.component';
 import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
 
 

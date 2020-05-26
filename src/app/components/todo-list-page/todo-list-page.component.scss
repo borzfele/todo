@@ -1,11 +1,13 @@
-.table-container {
-  margin: 0 24px 24px 24px;
-}
+.todo-list-page {
+  &__table-container {
+    margin: 0 24px 24px 24px;
+  }
 
-.priorities-table {
-  margin-bottom: 16px;
-}
+  &__priorities-table {
+    margin-bottom: 16px;
+  }
 
-.table-title {
-  color: white;
+  &__table-title {
+    color: white;
+  }
 }

@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Store } from '@ngxs/store';
 import { Navigate } from '@ngxs/router-plugin';
+import { MenuItem } from '../../models/todo.models';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent {
 
-  menuItems = [
+  menuItems: MenuItem[] = [
     {
       label: 'Add todo',
       action: () => {
@@ -25,8 +27,5 @@ export class NavBarComponent implements OnInit {
   ];
 
   constructor(private store: Store) { }
-
-  ngOnInit() {
-  }
 
 }

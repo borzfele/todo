@@ -1,7 +1,5 @@
 export interface TodoStateModel {
   todos: Todo[];
-  pending: boolean;
-  isModalOpen: boolean;
 }
 
 export interface Todo {
@@ -9,4 +7,9 @@ export interface Todo {
   todo: string;
   finished: boolean;
   priority: boolean;
+}
+
+export interface MenuItem {
+  label: string;
+  action: () => void;
 }

@@ -1,14 +1,13 @@
 :host {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 24px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 h2 {
-  margin: 0 24px 24px 0;
-  color: white;
+  margin-top: 0;
+  color: darkcyan;
 }
 
 .edit-form {

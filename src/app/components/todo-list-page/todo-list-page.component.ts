@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Select, Store } from '@ngxs/store';
-import { TodoState } from '../../store/todo.state';
 import { Observable } from 'rxjs';
-import { Todo } from '../../models/todo.models';
+
+import { TodoState } from '../../store/todo.state';
 import { TodoListOnInit } from '../../store/todo.actions';
+import { Todo } from '../../models/todo.models';
 
 @Component({
   selector: 'app-todo-list-page',

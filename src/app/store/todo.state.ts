@@ -1,15 +1,28 @@
 import { Injectable } from '@angular/core';
+
 import { State, Action, StateContext, Selector } from '@ngxs/store';
+
 import { TodoStateModel, Todo } from '../models/todo.models';
-import { SubmitTodo, TodoListOnInit, GetTodosSuccess, GetTodos, DeleteTodo, SubmitTodoSuccess, DeleteTodoSuccess, FinishTodo, FinishTodoSuccess, UnfinishTodo, UnfinishTodoSuccess, UpdateTodo, UpdateTodoSuccess } from './todo.actions';
 import { TodoService } from '../services/todo.service';
+import {
+  SubmitTodo,
+  TodoListOnInit,
+  GetTodosSuccess,
+  GetTodos,
+  DeleteTodo,
+  SubmitTodoSuccess,
+  DeleteTodoSuccess,
+  FinishTodo,
+  FinishTodoSuccess,
+  UnfinishTodo,
+  UnfinishTodoSuccess,
+  UpdateTodo,
+  UpdateTodoSuccess } from './todo.actions';
 
 @State<TodoStateModel>({
   name: 'todo',
   defaults: {
-    todos: [],
-    pending: false,
-    isModalOpen: false
+    todos: []
   }
 })
 @Injectable()

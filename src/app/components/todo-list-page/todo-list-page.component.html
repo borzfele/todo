@@ -1,10 +1,10 @@
-<div class="table-container">
-  <div class="priorities-table" >
-    <h2 class="table-title">Priorities</h2>
+<div class="todo-list-page__table-container">
+  <div class="todo-list-page__priorities-table" >
+    <h2 class="todo-list-page__table-title">Priorities</h2>
     <app-todo-list [todos]="priorities$ | async"></app-todo-list>
   </div>
   <div>
-    <h2 class="table-title">Common tasks</h2>
+    <h2 class="todo-list-page__table-title">Common tasks</h2>
     <app-todo-list [todos]="commonTodos$ | async"></app-todo-list>
   </div>
 </div>

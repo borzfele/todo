@@ -1,17 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Todo } from 'src/app/models/todo.models';
-import { Store } from '@ngxs/store';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
+import { Store } from '@ngxs/store';
+
 import { ModalComponent } from '../delete-modal/delete-modal.component';
 import { EditModalComponent } from '../edit-modal/edit-modal.component';
-import { FinishTodo, UnfinishTodo } from 'src/app/store/todo.actions';
+import { Todo } from '../../models/todo.models';
+import { FinishTodo, UnfinishTodo } from '../../store/todo.actions';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent {
 
   @Input()
   todos: Todo[];
@@ -36,9 +38,4 @@ export class TodoListComponent implements OnInit {
       this.store.dispatch(new UnfinishTodo(todo));
     }
   }
-
-  ngOnInit() {
-    console.log(this.todos);
-  }
-
 }

@@ -17,7 +17,7 @@ h2 {
     flex-direction: column;
     justify-content: space-evenly;
     background-color: white;
-    padding: 16px;
+    padding: 24px;
     width: 33%;
     border-radius: 5px;
 
@@ -32,15 +32,15 @@ h2 {
       margin-bottom: 16px;
     }
 
+    &__input:first-child {
+      margin-bottom: 0;
+    }
+
     &__label {
         display: flex;
         flex-direction: row;
         padding-bottom: 16px;
         min-height: 16px;
         width: 100%;
-    }
-
-    input {
-        margin-top: 10px;
     }
 }

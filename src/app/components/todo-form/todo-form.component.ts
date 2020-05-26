@@ -8,7 +8,7 @@ import { SubmitTodo } from '../../store/todo.actions';
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.scss']
 })
-export class TodoFormComponent implements OnInit {
+export class TodoFormComponent {
 
   constructor(private store: Store) { }
 
@@ -21,9 +21,6 @@ export class TodoFormComponent implements OnInit {
   onSubmit() {
     this.store.dispatch(new SubmitTodo(this.todoForm.value));
     this.todoForm.reset();
-  }
-
-  ngOnInit() {
   }
 
 }
